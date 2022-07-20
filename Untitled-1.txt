@@ -1,0 +1,3 @@
+{this.props.boards.map((board: IBoard) => (
+    <p>{board}</p>
+))}
