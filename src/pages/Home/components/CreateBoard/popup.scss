@@ -14,6 +14,9 @@
 
 .popup.active {
   display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   
   .popup_body {

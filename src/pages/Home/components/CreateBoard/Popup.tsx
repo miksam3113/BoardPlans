@@ -15,25 +15,18 @@ import { useDispatch } from 'react-redux';
 import { CreateBoard } from '../../../../store/modules/boards/actions';
 import './popup.scss';
 
-export default function Popup(props: {
-	active: boolean;
-	setActive: (active: boolean) => void;
-	handleModal?: () => void;
-}) {
+export default function Popup(props: { active: boolean; handleModal?: () => void }) {
 	function validator(regExp: RegExp, title: string): boolean {
 		return regExp.test(title);
 	}
 
 	const regExp = /^((\w|[А-ЯЁа-яё])+[\s.-]?)+$|^$/;
-
 	const [title, setTitle] = useState({ title: '' });
 	const dispatch = useDispatch();
 
 	function Validate(e: any) {
 		const input = e.target.value;
-		console.log(input);
 		const title_v = validator(regExp, input) ? input : '';
-		console.log(title_v);
 		setTitle({
 			...title,
 			title: title_v,
@@ -49,10 +42,11 @@ export default function Popup(props: {
 				title: '',
 			});
 		}
+		document.location.reload();
 	}
 
 	return (
-		<div id="popup" className={props.active ? 'popup active' : 'popup'} onClick={() => props.setActive(false)}>
+		<div id="popup" className={props.active ? 'popup active' : 'popup'} onClick={props.handleModal}>
 			<div className="popup_body" onClick={(e) => e.stopPropagation()}>
 				<p className="p_title">Создание доски</p>
 				<input id="input" onChange={Validate} className="p_inp" placeholder="Введи название..."></input>

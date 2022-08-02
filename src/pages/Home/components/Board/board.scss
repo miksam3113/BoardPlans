@@ -1,5 +1,4 @@
 .board {
-	width: 240px;
 	height: 100px;
 	border: 1px solid #000;
 	border-radius: 18px;
@@ -8,19 +7,18 @@
 	align-items: center;
 	margin-bottom: 25px;
 	background-color: rgb(42, 42, 255);
-}
-
-.title_board_h {
 	font-size: 23px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
-	width: 220px;
-	text-align: center;
+	width: 230px;
 	text-decoration: none;
+	color: #000;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .add_board {
-	width: 240px;
+	width: 230px;
 	height: 100px;
 	border: 1px solid #000;
 	border-radius: 18px;
@@ -31,4 +29,6 @@
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	margin-bottom: 25px;
+	margin-left: 10px;
+	margin-right: 10px;
 }

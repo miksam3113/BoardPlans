@@ -2,9 +2,5 @@
 import './board.scss';
 
 export default function Board(props: { title: string }) {
-	return (
-		<button className="board">
-			<p className="title_board_h">{props.title}</p>
-		</button>
-	);
+	return <a className="title_board_h board">{props.title}</a>;
 }
