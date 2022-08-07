@@ -67,7 +67,7 @@ class Board extends React.Component<TParams & funType & propsType, stateType> {
 					<DeleteBoard id={this.id} />
 				</div>
 				<div className="board_lists">
-					{lists && Object.values(lists).map((list: IListItem) => <List title={list.title} list={list} />)}
+					{lists && Object.values(lists).map((list: IListItem) => <List id={this.id} title={list.title} list={list} />)}
 					<CreList title="List" pos={this.positionList} id={this.id} />
 				</div>
 			</div>

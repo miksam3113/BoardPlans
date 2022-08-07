@@ -2,7 +2,6 @@
 /* eslint-disable import/no-absolute-path */
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
-import { title } from 'process';
 import { Dispatch } from 'redux';
 import api from '../../../api/request';
 
@@ -10,6 +9,7 @@ export const getBoard = (id: number) => async (dispatch: Dispatch) => {
 	try {
 		const board = await api.get(`/board/${id}`);
 		await dispatch({ type: 'GET_BOARD', payload: { board, id } });
+		console.log(id);
 	} catch (e) {
 		console.log(e);
 		dispatch({ type: 'ERROR_ACTION_TYPE' });
@@ -50,7 +50,17 @@ export const CreateList =
 export const EditList = (id_b: number, id_l: number, Ntitle: string, pos: number) => async (dispatch: Dispatch) => {
 	try {
 		await api.put(`/board/${id_b}/list/${id_l}`, { title: Ntitle, position: pos });
-		await dispatch({ type: 'PUT_LIST', payload: { ...{ title, pos } } });
+		await dispatch({ type: 'PUT_LIST', payload: { ...{ Ntitle, pos } } });
+	} catch (e) {
+		console.log(e);
+		dispatch({ type: 'ERROR_ACTION_TYPE' });
+	}
+};
+
+export const DeleteList = (id_b: number, id_l: number) => async (dispatch: Dispatch) => {
+	try {
+		await api.delete(`/board/${id_b}/list/${id_l}`);
+		await dispatch({ type: 'DELETE_BOARD', payload: { id_b, id_l } });
 	} catch (e) {
 		console.log(e);
 		dispatch({ type: 'ERROR_ACTION_TYPE' });
