@@ -1,14 +1,12 @@
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/destructuring-assignment */
-import Card from '../Card/Card';
-import ICard from '../../../../common/interfaces/ICard';
+import './list.scss';
 
-export const List = (props: { title: string; cards: ICard[] }) => (
-	<div className="list">
-		<p className="title_list">{props.title}</p>
-		{props.cards.map((card: ICard) => (
-			<Card title={card.title} />
-		))}
-		<button className="btn_add_card">+ Add Card</button>
-	</div>
-);
+export default function List(props: { title: string; list: object }) {
+	console.log(props.list);
+	return <p>lll</p>;
+}

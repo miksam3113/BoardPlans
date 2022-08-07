@@ -1,9 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .title_home {
-	font-size: 36px;
-	font-family: 'Roboto', sans-serif;
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
 	font-weight: 600;
 	text-align: center;
 	margin-top: 5px;
+	color: #fff;
+	margin-bottom: 20px;
 }
 
 .all_boards {
@@ -13,4 +20,24 @@
 	margin-right: auto;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+
+.body_home {
+	background: linear-gradient(-45deg, #56241b, #6b1b3a, #000000, #000000);
+	background-size: 400% 400%;
+	animation: gradient 25s ease infinite;
+	height: 100vh;
+	margin-top: -5px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

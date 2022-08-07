@@ -21,7 +21,7 @@
   
   .popup_body {
     width: 65%;
-    background-color: #fff;
+    background-color: rgb(50, 50, 50);
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -30,17 +30,26 @@
 
   .p_title {
     margin-top: 20px;
-    font-size: 34px;
+    font-size: 45px;
     font-family: "Arimo", sans-serif;
     text-align: center;
     font-weight: 600;
+    color: #fff;
   }
+
+.p_eror {
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 48, 48);
+  font-size: 24px;
+  margin-top: 0px;
+}
 
   .p_inp {
     justify-content: right;
     background-color: rgba(0, 0, 0, 0);
-    color: #000;
-    border: 2px solid #000;
+    color: #fff;
+    border: 2px solid #fff;
     width: 400px;
     height: 40px;
     font-size: 24px;
@@ -50,21 +59,99 @@
     margin-right: auto;
   }
 
-  .p_btn {
+input::-webkit-input-placeholder { color: #fff; }
+
+.color_board {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color_btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 2px solid #fff;
+  transition: 1s;
+}
+
+.red {
+  background-color: rgb(227, 6, 6);
+}
+.green {
+  background-color: rgb(7, 180, 7);
+}
+.blue {
+  background-color: rgb(49, 49, 165);
+}
+.purple {
+  background-color: rgb(117, 9, 205);
+}
+.yellow {
+  background-color: rgb(245, 155, 1);
+}
+
+.custom_color {
+  background-color: rgb(50, 50, 50);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 2px solid #fff;
+  transition: 1s;
+  display: flex;
+  flex-direction: row;
+}
+
+.custom_plus {
+  color: #fff;
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 0px;
+  margin-top: -7px;
+}
+
+.custom_inp {
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  margin-top: -2px;
+  margin-left: -38px;
+}
+
+.color_btn:hover {
+  transform: scale(1.1);
+}
+
+.custom_color:hover {
+  transform: scale(1.1);
+}
+
+.p_btn {
 	width: 175px;
 	height: 75px;
-	border: 1px solid #000;
+	border: 2px solid #fff;
 	border-radius: 18px;
+  background-color: rgba(0, 0, 0, 0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 23px;
+	font-size: 25px;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+	font-weight: 700;
+	margin-top: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
 
   .hidden {
     display: none;

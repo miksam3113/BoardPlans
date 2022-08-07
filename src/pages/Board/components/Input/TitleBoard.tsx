@@ -30,14 +30,21 @@ function Input(props: { value: string; id: string }) {
 	}
 
 	function funPress(event: React.KeyboardEvent<HTMLInputElement>) {
-		if (event.key === 'Enter' && title) {
+		if (event.key === 'Enter' && title.title) {
 			console.log(props.id);
 			dispatch(EditBoard(props.id, title.title.trim()));
 		}
 	}
 
 	return (
-		<input onChange={Validate} className="title_set" type="text" placeholder={props.value} onKeyPress={funPress} />
+		<input
+			maxLength={16}
+			onChange={Validate}
+			className="title_set"
+			type="text"
+			placeholder={props.value}
+			onKeyPress={funPress}
+		/>
 	);
 }
 

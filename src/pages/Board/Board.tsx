@@ -14,14 +14,16 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/naming-convention */
 import React from 'react';
-import { connect } from 'react-redux';
-import { Link, RouteComponentProps, useLocation, useParams } from 'react-router-dom';
+import { connect, useDispatch } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import { getBoard } from '../../store/modules/board/actions';
-import './components/Board/board.scss';
-import { List } from './components/List/List';
+import './board.scss';
+import List from './components/List/List';
+import CreList from './components/List/CreateList/CreateList';
 import IListItem from '../../common/interfaces/IList';
 import IPageBoard from '../../common/interfaces/IPageBoard';
 import Input from './components/Input/TitleBoard';
+import DeleteBoard from './components/DeleteBoard/DeleteBoard';
 
 type propsType = {
 	board: IPageBoard;
@@ -47,25 +49,28 @@ class Board extends React.Component<TParams & funType & propsType, stateType> {
 		}
 	}
 
+	positionList = () => {
+		const listPos = Object.keys(this.props.board.lists).length;
+		return listPos;
+	};
+
 	render() {
-		console.log(this.id);
-		const { title, lists } = this.props.board;
 		console.log(this.props.board);
+		const { title, lists } = this.props.board;
 		return (
-			<>
+			<div className="body_board">
 				<div className="hader_board">
 					<a href="/" className="btn_home">
-						Домой
+						Home
 					</a>
 					<Input value={title} id={this.id} />
+					<DeleteBoard id={this.id} />
 				</div>
 				<div className="board_lists">
-					{lists && Object.values(lists).map((list: IListItem) => <List title={list.title} cards={list.cards} />)}
-					<div className="add_list">
-						<button className="btn_add_list">+ Добавить список</button>
-					</div>
+					{lists && Object.values(lists).map((list: IListItem) => <List title={list.title} list={list} />)}
+					<CreList title="List" pos={this.positionList} id={this.id} />
 				</div>
-			</>
+			</div>
 		);
 	}
 }

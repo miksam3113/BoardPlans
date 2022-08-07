@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/no-unused-class-component-methods */
@@ -28,6 +29,7 @@ type propsType = {
 // eslint-disable-next-line @typescript-eslint/naming-convention, @typescript-eslint/ban-types
 type stateType = {
 	modalActive: boolean;
+	color: string;
 };
 
 class Home extends React.Component<propsType, stateType> {
@@ -35,6 +37,7 @@ class Home extends React.Component<propsType, stateType> {
 		super(props);
 		this.state = {
 			modalActive: false,
+			color: '',
 		};
 	}
 
@@ -46,15 +49,19 @@ class Home extends React.Component<propsType, stateType> {
 		this.setState({ modalActive: !this.state.modalActive });
 	};
 
+	setcolor = (value: string) => {
+		this.setState({ color: value });
+	};
+
 	render() {
 		console.log(this.props.boards.boards);
 		return (
-			<>
-				<p className="title_home">Мои доски</p>
+			<section className="body_home">
+				<p className="title_home">My boards</p>
 				<div className="all_boards">
 					{this.props.boards.boards &&
 						this.props.boards.boards.map((board: any) => (
-							<Link to={`/board/${board.id}/`}>
+							<Link to={`/board/${board.id}/`} style={{ textDecoration: 'none' }}>
 								<Board key={board.id} title={board.title} />
 							</Link>
 						))}
@@ -62,8 +69,8 @@ class Home extends React.Component<propsType, stateType> {
 						+ Create Board
 					</button>
 				</div>
-				<Popup active={this.state.modalActive} handleModal={this.setpopup} />
-			</>
+				<Popup active={this.state.modalActive} handleModal={this.setpopup} updateData={this.setcolor} />
+			</section>
 		);
 	}
 }

@@ -14,12 +14,11 @@ export const getBoards = () => async (dispatch: Dispatch) => {
 };
 
 export const CreateBoard =
-	(text: string) =>
+	(text: string, clr: string) =>
 	async (dispatch: Dispatch): Promise<void> => {
 		try {
 			await api.post('/board', { title: text });
-			await dispatch({ type: 'POST_BOARD', payload: { ...{ title: text } } });
-			await getBoards();
+			await dispatch({ type: 'POST_BOARD', payload: { ...{ title: text, color: clr } } });
 		} catch (e) {
 			dispatch({ type: 'ERROR_ACTION_TYPE' });
 		}

@@ -1,21 +1,49 @@
 .hader_board {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	margin-top: 5px;
-	width: 80%;
+	width: 100%;
+}
+
+.body_board {
+	background-color: rgb(50, 50, 50);
+	background-size: 400% 400%;
+	height: 100vh;
+	margin-top: -5px;
 }
 
 .btn_home {
-	width: 300px;
+	width: 200px;
 	height: 60px;
-	border: 2px solid #000;
-	font-size: 26px;
+	border: 2px solid #fff;
+	font-size: 38px;
+	border-radius: 13px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Fjalla One', sans-serif;
 	text-decoration: none;
-	color: #000;
+	color: #fff;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+
+.btn_del_board {
+	width: 250px;
+	height: 60px;
+	border: 2px solid #fff;
+	font-size: 36px;
+	border-radius: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Fjalla One', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	margin-right: 25px;
+	margin-top: 15px;
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .board_lists {
@@ -24,34 +52,21 @@
 	margin-left: 50px;
 	margin-right: 50px;
 	margin-top: 20px;
+	height: 550px;
+	overflow: hidden;
+    overflow-x: scroll;
+    white-space:nowrap;
 }
 
-.list {
-	width: 300px;
-	margin-left: 50px;
-	height: 500px;
-	text-align: center;
-	border: 1px solid #000;
-	background-color: rgb(200, 200, 200);
+::-webkit-scrollbar {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(200, 200, 200);
+    border-radius: 13px;
 }
 
-.add_list {
-	width: 300px;
-	margin-left: 50px;
-	margin-right: 50px;
-	text-align: center;
-}
-
-.title_list {
-	font-size: 26px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	margin-top: 5px;
-}
-
-.btn_add_list {
-	width: 250px;
-	height: 40px;
-	font-size: 24px;
-	font-family: 'Roboto', sans-serif;
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
