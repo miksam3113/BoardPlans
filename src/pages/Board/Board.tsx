@@ -14,9 +14,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/naming-convention */
 import React from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { getBoard } from '../../store/modules/board/actions';
+import { getBoard } from 'store/modules/board/actions';
 import './board.scss';
 import List from './components/List/List';
 import CreList from './components/List/CreateList/CreateList';
@@ -49,13 +49,9 @@ class Board extends React.Component<TParams & funType & propsType, stateType> {
 		}
 	}
 
-	positionList = () => {
-		const listPos = Object.keys(this.props.board.lists).length;
-		return listPos;
-	};
+	positionList = () => Object.keys(this.props.board.lists).length;
 
 	render() {
-		console.log(this.props.board);
 		const { title, lists } = this.props.board;
 		return (
 			<div className="body_board">
@@ -67,7 +63,10 @@ class Board extends React.Component<TParams & funType & propsType, stateType> {
 					<DeleteBoard id={this.id} />
 				</div>
 				<div className="board_lists">
-					{lists && Object.values(lists).map((list: IListItem) => <List id={this.id} title={list.title} list={list} />)}
+					{lists &&
+						Object.values(lists).map((list: IListItem) => (
+							<List id={this.id} position={list.position} title={list.title} list={list} />
+						))}
 					<CreList title="List" pos={this.positionList} id={this.id} />
 				</div>
 			</div>

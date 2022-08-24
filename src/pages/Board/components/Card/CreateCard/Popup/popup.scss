@@ -1,0 +1,28 @@
+.popup_card {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: 2s;
+}
+
+.popup_card.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_body_card {
+  width: 28%;
+  background-color: rgb(50, 50, 50);
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

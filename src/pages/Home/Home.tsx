@@ -13,7 +13,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getBoards } from '../../store/modules/boards/actions';
+import { getBoards } from 'store/modules/boards/actions';
 import IBoard from '../../common/interfaces/IBoard';
 import './components/home.scss';
 import Popup from './components/CreateBoard/Popup';
@@ -62,7 +62,7 @@ class Home extends React.Component<propsType, stateType> {
 					{this.props.boards.boards &&
 						this.props.boards.boards.map((board: any) => (
 							<Link to={`/board/${board.id}/`} style={{ textDecoration: 'none' }}>
-								<Board key={board.id} title={board.title} />
+								<Board key={board.id} color={board.color} title={board.title} />
 							</Link>
 						))}
 					<button onClick={this.setpopup} className="add_board">

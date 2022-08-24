@@ -5,11 +5,24 @@
 import { Dispatch } from 'redux';
 import api from '../../../api/request';
 
+// Board
+
+export function loaderOn() {
+	return {
+		type: 'LOADER_DISPLAY_ON',
+	};
+}
+
+export function loaderOff() {
+	return {
+		type: 'LOADER_DISPLAY_OFF',
+	};
+}
+
 export const getBoard = (id: number) => async (dispatch: Dispatch) => {
 	try {
 		const board = await api.get(`/board/${id}`);
 		await dispatch({ type: 'GET_BOARD', payload: { board, id } });
-		console.log(id);
 	} catch (e) {
 		console.log(e);
 		dispatch({ type: 'ERROR_ACTION_TYPE' });
@@ -35,6 +48,8 @@ export const DeleteBoard = (id: number) => async (dispatch: Dispatch) => {
 		dispatch({ type: 'ERROR_ACTION_TYPE' });
 	}
 };
+
+// List
 
 export const CreateList =
 	(title: string, pos: number, id: number) =>
@@ -66,3 +81,24 @@ export const DeleteList = (id_b: number, id_l: number) => async (dispatch: Dispa
 		dispatch({ type: 'ERROR_ACTION_TYPE' });
 	}
 };
+
+// Card
+
+export const CreateCard =
+	(title: string, pos: number, id_b: number, id_l: number) =>
+	async (dispatch: Dispatch): Promise<void> => {
+		try {
+			await api.post(`/board/${id_b}/card/`, {
+				title,
+				list_id: id_l,
+				position: pos,
+			});
+
+			await dispatch({
+				type: 'POST_CARD',
+				payload: { ...{ title, pos, id_l }, id_b },
+			});
+		} catch (e) {
+			dispatch({ type: 'ERROR_ACTION_TYPE' });
+		}
+	};

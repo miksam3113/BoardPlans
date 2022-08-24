@@ -5,7 +5,6 @@
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     transition: 2s;
@@ -13,7 +12,6 @@
   }
 
 .popup.active {
-  display: block;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +40,7 @@
   margin-right: auto;
   color: rgb(255, 48, 48);
   font-size: 24px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
   .p_inp {
@@ -115,7 +113,7 @@ input::-webkit-input-placeholder { color: #fff; }
   width: 50px;
   height: 50px;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 0px;
+  margin-left: 0;
   margin-top: -7px;
 }
 

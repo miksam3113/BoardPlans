@@ -17,7 +17,7 @@ export const CreateBoard =
 	(text: string, clr: string) =>
 	async (dispatch: Dispatch): Promise<void> => {
 		try {
-			await api.post('/board', { title: text });
+			await api.post('/board', { title: text, color: clr });
 			await dispatch({ type: 'POST_BOARD', payload: { ...{ title: text, color: clr } } });
 		} catch (e) {
 			dispatch({ type: 'ERROR_ACTION_TYPE' });
