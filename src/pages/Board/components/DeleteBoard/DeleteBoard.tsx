@@ -1,20 +1,23 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable @typescript-eslint/no-redeclare */
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { DeleteBoard } from '../../../../store/modules/board/actions';
+import React, { useState } from 'react';
+import Popup from 'pages/Board/components/DeleteBoard/DeleteBoardPopup/Popup';
 
-function DelBoard(props: { id: number }) {
-	const dispatch = useDispatch();
-
-	function deleteBoard() {
-		dispatch(DeleteBoard(props.id));
+// eslint-disable-next-line react/no-unused-prop-types
+function DelBoard(props: { title: string; id: number }) {
+	const [active, setActive] = useState(false);
+	function Active() {
+		setActive(!active);
 	}
 
 	return (
-		<a href="/" onClick={deleteBoard} className="btn_del_board">
-			DeleteBoard
-		</a>
+		<>
+			<a onClick={Active} className="btn_del_board">
+				DeleteBoard
+			</a>
+			{/* eslint-disable-next-line react/jsx-no-bind */}
+			<Popup title={props.title} id={props.id} active={active} handleModal={Active} />
+		</>
 	);
 }
 

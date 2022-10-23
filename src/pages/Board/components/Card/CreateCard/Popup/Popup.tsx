@@ -45,11 +45,10 @@ export default function Popup(props: {
 					...title,
 					title: '',
 				});
-				dispatch(getBoard(props.cre_id_b));
 			} else {
 				setEror({
 					...eror,
-					eror: 'Ups, eror...',
+					eror: 'Oops, write title...',
 				});
 			}
 		}
@@ -62,13 +61,13 @@ export default function Popup(props: {
 			onClick={() => props.setActive(false)}
 		>
 			<div className="popup_body_card" onClick={(e) => e.stopPropagation()}>
-				<p className="p_eror">{eror.eror}</p>
+				<p className="p_card_eror">{eror.eror}</p>
 				<input
 					id="input"
 					onChange={Validate}
 					onKeyDown={Create}
 					maxLength={12}
-					className="p_inp"
+					className="p_inp card_inp"
 					placeholder="Write title..."
 				></input>
 			</div>

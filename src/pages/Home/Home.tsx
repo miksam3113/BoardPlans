@@ -11,13 +11,17 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getBoards } from 'store/modules/boards/actions';
+import errorReducer from 'store/modules/error/reducer';
 import IBoard from '../../common/interfaces/IBoard';
 import './components/home.scss';
 import Popup from './components/CreateBoard/Popup';
 import Board from './components/Board/Board';
+import Spin from '../Spin/Spin';
+// eslint-disable-next-line import/order
+import { RootState } from 'store/reducer';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 type propsType = {
@@ -58,11 +62,12 @@ class Home extends React.Component<propsType, stateType> {
 		return (
 			<section className="body_home">
 				<p className="title_home">My boards</p>
+				<Spin />
 				<div className="all_boards">
 					{this.props.boards.boards &&
 						this.props.boards.boards.map((board: any) => (
 							<Link to={`/board/${board.id}/`} style={{ textDecoration: 'none' }}>
-								<Board key={board.id} color={board.color} title={board.title} />
+								<Board key={board.id} color={board.custom} title={board.title} />
 							</Link>
 						))}
 					<button onClick={this.setpopup} className="add_board">

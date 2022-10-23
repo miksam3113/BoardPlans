@@ -29,6 +29,14 @@
 	margin-top: 15px;
 }
 
+.btn_home:hover {
+	color: white;
+}
+
+.btn_del_board:hover {
+	color: white;
+}
+
 .btn_del_board {
 	width: 250px;
 	height: 60px;
@@ -44,6 +52,7 @@
 	margin-right: 25px;
 	margin-top: 15px;
 	background-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
 }
 
 .board_lists {

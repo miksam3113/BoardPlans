@@ -3,14 +3,13 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { CreateList, getBoard } from 'store/modules/board/actions';
+import { CreateList } from 'store/modules/board/actions';
 
 function CreList(props: { title: string; pos: () => number; id: number }) {
 	const dispatch = useDispatch();
 
 	function createList() {
 		dispatch(CreateList(props.title, props.pos(), props.id));
-		dispatch(getBoard(props.id));
 	}
 
 	return (

@@ -1,0 +1,105 @@
+.popup_del_b {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  transition: 2s;
+  display: none;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_del_b_body {
+  width: 45%;
+  background-color: rgb(50, 50, 50);
+  height: 57%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.p_del_b_title {
+  margin-top: -20px;
+  font-size: 28px;
+  font-family: "Arimo", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #fff;
+}
+
+.p_del_b_des {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  color: #fff;
+}
+
+.p_del_eror {
+  color: rgb(255, 48, 48);
+  font-size: 24px;
+  margin: -20px auto 3px;
+}
+
+.p_del_b_inp {
+  justify-content: right;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  border: 2px solid #fff;
+  width: 400px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  outline: 2px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input::-webkit-input-placeholder { color: #fff; }
+
+.p_del_b_btn {
+  width: 175px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin-top: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.del:hover {
+  transition: 0.5s;
+  background-color: #850707;
+  color: #fff;
+}
+
+.btn_cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}

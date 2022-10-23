@@ -18,11 +18,21 @@
 }
 
 .popup_body_card {
-  width: 28%;
+  width: 40%;
   background-color: rgb(50, 50, 50);
-  height: 10%;
+  height: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card_inp {
+  margin-top: 25px;
+}
+
+.p_card_eror {
+  color: rgb(255, 48, 48);
+  font-size: 24px;
+  margin: -15px auto -20px;
 }

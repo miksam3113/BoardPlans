@@ -17,7 +17,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { CreateBoard, getBoards } from '../../../../store/modules/boards/actions';
+import { CreateBoard, getBoards } from 'store/modules/boards/actions';
 import './popup.scss';
 
 export default function Popup(props: {
@@ -70,11 +70,15 @@ export default function Popup(props: {
 			});
 			setColor('');
 			props.updateData?.(color);
-			dispatch(getBoards());
-		} else {
+		} else if (!title.title) {
 			setEror({
 				...eror,
-				eror: 'Ups, eror...',
+				eror: 'Oops, write title...',
+			});
+		} else if (!color) {
+			setEror({
+				...eror,
+				eror: 'Oops, select color...',
 			});
 		}
 	}
