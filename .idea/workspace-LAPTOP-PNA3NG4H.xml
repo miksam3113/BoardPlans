@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f19e4a08-47d4-4466-bab8-a17eb806e25e" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/pages/Board/components/DeleteBoard/DeleteBoardPopup/Popup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Board/components/DeleteBoard/DeleteBoardPopup/popup.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Spin/Spin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Spin/spin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/loader/action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/loader/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/interfaces/IPageBoard.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/interfaces/IPageBoard.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Board/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Board/Board.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Board/board.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Board/board.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Board/components/DeleteBoard/DeleteBoard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Board/components/DeleteBoard/DeleteBoard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Board/components/List/List.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Board/components/List/List.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/Board/board.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/components/Board/board.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/CreateBoard/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/components/CreateBoard/Popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/CreateBoard/popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/components/CreateBoard/popup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/components/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/components/home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/board/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/board/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/boards/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/boards/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DfqR1wz3rZIqwltQx1TUrwDmXM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maks1/OneDrive/Документы/BoardPlans&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\maks1\\OneDrive\\Документы\\BoardPlans\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.tslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\maks1\\OneDrive\\Документы\\BoardPlans\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f19e4a08-47d4-4466-bab8-a17eb806e25e" name="Changes" comment="" />
+      <created>1661100474732</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661100474732</updated>
+      <workItem from="1661100477605" duration="7789000" />
+      <workItem from="1661116730412" duration="1537000" />
+      <workItem from="1661160133029" duration="2020000" />
+      <workItem from="1661274116700" duration="8301000" />
+      <workItem from="1661330402606" duration="2484000" />
+      <workItem from="1661334565927" duration="10130000" />
+      <workItem from="1661459600715" duration="850000" />
+      <workItem from="1661515207921" duration="3405000" />
+      <workItem from="1661706375529" duration="3256000" />
+      <workItem from="1662024473352" duration="5940000" />
+      <workItem from="1662116531930" duration="200000" />
+      <workItem from="1662286835486" duration="6212000" />
+      <workItem from="1662395404187" duration="596000" />
+      <workItem from="1663082220230" duration="3000" />
+      <workItem from="1663524729837" duration="1190000" />
+      <workItem from="1663695330817" duration="3330000" />
+      <workItem from="1663734335844" duration="4461000" />
+      <workItem from="1663876380778" duration="5377000" />
+      <workItem from="1664214526477" duration="102000" />
+      <workItem from="1664216570482" duration="249000" />
+    </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1661335963020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661335963020</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+</project>
