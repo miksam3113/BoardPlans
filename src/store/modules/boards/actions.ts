@@ -10,12 +10,9 @@ export const getBoards = () => async (dispatch: Dispatch) => {
 		dispatch(loaderOn());
 		const boards = await api.get('/board');
 		setTimeout(async () => {
-			dispatch({ type: 'UPDATE_BOARDS', payload: boards });
+			dispatch({ type: 'GET_BOARDS', payload: boards });
 			dispatch(loaderOff());
 		}, 600);
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		dispatch(errorType('Ошибка API'));
 	} catch (e) {
 		console.log(e);
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -35,6 +32,9 @@ export const CreateBoard =
 			// @ts-ignore
 			await dispatch(getBoards());
 		} catch (e) {
-			dispatch({ type: 'ERROR_ACTION_TYPE' });
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore
+			dispatch(errorType('Ошибка API'));
+			dispatch(loaderOff());
 		}
 	};

@@ -9,6 +9,7 @@
   align-items: center;
   transition: 2s;
   display: none;
+  z-index: 100;
 }
 
 .active {
@@ -52,6 +53,12 @@
   color: rgb(255, 48, 48);
   font-size: 24px;
   margin: -20px auto 3px;
+}
+
+.rd_bg {
+  transition: 0.3s;
+  border: 2px solid #d00000;
+  border-radius: 3px;
 }
 
 .p_del_b_inp {

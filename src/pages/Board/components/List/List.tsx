@@ -1,4 +1,4 @@
-/* eslint-disable import/order */
+/* eslint-disable */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable no-console */
@@ -8,17 +8,33 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { EditList } from 'store/modules/board/actions';
 import DelList from './DeleteList/DeleteList';
-import Card from '../Card/Card';
+import '../Card/card.scss';
 import './list.scss';
 import CreCard from '../Card/CreateCard/CreateCard';
+import IListItem from 'common/interfaces/IList';
+import ICardItem from 'common/interfaces/ICard';
+import Card from '../Card/Card';
+import { comparePositionCard } from 'common/functions';
+import { EditList } from 'store/modules/board/actions';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import ModalCard from 'pages/Board/components/CardModal/Modal';
 
-export default function List(props: { id: number; position: number; title: string; list: any }) {
+export default function List(props: {
+	currPostId: string | undefined;
+	boardId: number;
+	id: number;
+	title: string;
+	list: IListItem;
+	position: number;
+	lists: IListItem[];
+}) {
 	function validator(regExp: RegExp, title: string): boolean {
 		return regExp.test(title);
 	}
-
+	// @ts-ignore
+	const { boardId } = useParams();
 	const regExp = /^((\w|[А-ЯЁа-яё])+[\s.-]?)+$|^$/;
 	const [title, SetTitle] = useState({ title: '' });
 	const dispatch = useDispatch();
@@ -30,31 +46,47 @@ export default function List(props: { id: number; position: number; title: strin
 			...title,
 			title: title_v,
 		});
+		dispatch(EditList(boardId, props.id, title_v, props.position));
 	}
-
 	function funPress(event: { keyCode: number }) {
 		if (event.keyCode === 13 && title.title) {
-			dispatch(EditList(props.id, props.list.id, title.title.trim(), props.list.position));
+			dispatch(EditList(boardId, props.id, title.title.trim(), props.position));
 		}
 	}
-	const { cards } = props.list;
 	return (
-		<div className="list">
+		<div className="list" id={`list_${props.id}`}>
 			<div className="header_list">
 				<input
 					maxLength={12}
 					onChange={Validate}
 					className="title_list"
 					type="text"
-					placeholder={props.title}
 					onKeyDown={funPress}
+					placeholder={props.title}
+					autoComplete="off"
 				/>
-				<DelList id_b={props.id} id_l={props.list.id} />
+				<DelList id_b={boardId} id_l={props.id} />
 			</div>
 			<div className="middle_list">
-				{cards && Object.values(cards).map((card: any) => <Card title={card.title} />)}
-				<CreCard pos={props.position} id_b={props.id} id_l={props.list.id} />
+				{props.list.cards &&
+					Object.values(props.list.cards)
+						.sort(comparePositionCard)
+						.map((card: ICardItem) => (
+							<Card
+								key={card.index}
+								description={card.description}
+								currPostId={props.currPostId}
+								listId={props.id}
+								listTitle={props.title}
+								boardId={props.boardId}
+								title={card.title}
+								id={card.id}
+								lists={props.lists}
+								cards={props.list.cards}
+							/>
+						))}
 			</div>
+			<CreCard pos={props.position} id_b={boardId} id_l={props.id} />
 		</div>
 	);
 }

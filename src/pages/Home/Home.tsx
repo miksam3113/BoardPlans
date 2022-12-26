@@ -1,4 +1,4 @@
-/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable react/no-direct-mutation-state,prettier/prettier */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/no-unused-class-component-methods */
@@ -49,11 +49,11 @@ class Home extends React.Component<propsType, stateType> {
 		await this.props.getBoards();
 	}
 
-	setpopup = () => {
+	setPopup = () => {
 		this.setState({ modalActive: !this.state.modalActive });
 	};
 
-	setcolor = (value: string) => {
+	setColor = (value: string) => {
 		this.setState({ color: value });
 	};
 
@@ -62,7 +62,7 @@ class Home extends React.Component<propsType, stateType> {
 		return (
 			<section className="body_home">
 				<p className="title_home">My boards</p>
-				<Spin />
+				<Spin page="Home" />
 				<div className="all_boards">
 					{this.props.boards.boards &&
 						this.props.boards.boards.map((board: any) => (
@@ -70,11 +70,16 @@ class Home extends React.Component<propsType, stateType> {
 								<Board key={board.id} color={board.custom} title={board.title} />
 							</Link>
 						))}
-					<button onClick={this.setpopup} className="add_board">
+					<button onClick={this.setPopup} className="add_board">
 						+ Create Board
 					</button>
 				</div>
-				<Popup active={this.state.modalActive} handleModal={this.setpopup} updateData={this.setcolor} />
+				<Popup
+					boards={this.props.boards.boards}
+					active={this.state.modalActive}
+					handleModal={this.setPopup}
+					updateData={this.setColor}
+				/>
 			</section>
 		);
 	}

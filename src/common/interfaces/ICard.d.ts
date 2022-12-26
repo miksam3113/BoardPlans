@@ -1,7 +1,9 @@
-interface ICard {
+interface ICardItem {
+	id: number;
 	title: string;
-	list_id: number;
 	position: number;
+	index: number;
+	description: string;
 }
 
-export default ICard;
+export default ICardItem;

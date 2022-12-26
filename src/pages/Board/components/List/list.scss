@@ -36,10 +36,10 @@
 	flex-direction: column;
 	max-height: 430px;
 	overflow: hidden;
-	overflow-y: scroll;
+	width: 230px;
 	white-space:nowrap;
-	margin-right: 5px;
-	margin-left: 5px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 ::-webkit-scrollbar {
@@ -85,15 +85,6 @@
 	margin-top: 5px;
 }
 
-.btn_add_card {
-	min-width: 230px;
-	min-height: 50px;
-	border-radius: 8px;
-	margin-bottom: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	font-size: 18px;
-	font-family: 'Roboto', sans-serif;
-	border: 1px solid #000;
+.dragactive {
+	background-color: rgba(0, 0, 0, 0.8);;
 }

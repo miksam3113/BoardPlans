@@ -1,0 +1,255 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  display: flex;
+  color: #fff;
+  visibility: hidden;
+  transition: 0.3s all;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_body {
+  width: 55%;
+  background-color: rgb(50, 50, 50);
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 35px;
+  transition: 0.3s all;
+  transform: scale(0);
+}
+
+.modal_body.active {
+  transform: scale(1);
+  transition: 0.3s all;
+}
+
+/* Header */
+
+.header_modal {
+  margin-top: 0;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+}
+
+.text_header_modal {
+  margin-right: auto;
+}
+
+.title_card_modal {
+  font-size: 34px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  width: 250px;
+  margin-left: 7px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}
+
+.txt_header_modal {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin-top: 5px;
+  margin-left: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.txt_p_header_modal {
+  text-decoration: underline #fff solid;
+  margin-left: 0;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-weight: 400;
+}
+
+.close_header_modal {
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+/* Body */
+
+.body_modal {
+  margin-top: 0;
+  width: 100%;
+  height: 450px;
+}
+
+.btn_share_body_modal {
+  width: 150px;
+  min-height: 50px;
+  border-radius: 8px;
+  border: 3px solid #fff;
+  margin: 5px 0 5px 0;
+  text-align: center;
+  background-color: rgb(50, 50, 50);
+  cursor: pointer;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.copied {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  border-radius: 5px;
+  opacity: 0;
+  position: absolute;
+  left: 45%;
+  top: 10px;
+  width: 100px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copied.active {
+  opacity: 1;
+  transition: 1s;
+}
+
+.copied p {
+  color: white;
+  font-size: 22px;
+  margin-top: 12%;
+  font-family: "Roboto", sans-serif;
+}
+
+.right_page {
+  margin-left: 0;
+}
+
+.actions_txt {
+  font-size: 28px;
+  margin-left: 45px;
+  margin-top: 15px;
+}
+
+.btn_delete_body_modal {
+  width: 150px;
+  min-height: 50px;
+  border-radius: 8px;
+  border: 3px solid #fff;
+  margin: 5px 0 5px 0;
+  text-align: center;
+  background-color: rgb(50, 50, 50);
+  cursor: pointer;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.btn_delete_body_modal:hover {
+  transition: 0.5s;
+  background-color: #850707;
+  color: #fff;
+}
+
+.middle_body_modal {
+  display: flex;
+  flex-direction: row;
+}
+
+.left_page {
+  display: flex;
+  flex-direction: column;
+  margin-left: 75px;
+}
+
+.head_left_page {
+  display: flex;
+  flex-direction: row;
+}
+
+.head_left_page p {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.head_left_page button {
+  width: 150px;
+  background-color: rgb(50, 50, 50);
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-left: 15px;
+  border-radius: 8px;
+  height: 40px;
+  border: 3px solid #fff;
+  margin-top: 3px;
+  color: white;
+  font-size: 24px;
+}
+
+.head_left_page button:hover {
+  background-color: rgb(50, 50, 50);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+  width: 500px;
+  color: white;
+  height: 220px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(50, 50, 50);
+  font-size: 16px;
+  resize: none;
+}
+
+.drop_move_menu {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  background-color: rgb(50, 50, 50);
+  border-radius: 5px;
+  z-index: 1000;
+  margin-left: 125px;
+  width: 200px;
+}
+
+.drop_move_menu button {
+  background-color: rgb(50, 50, 50);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 200px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}

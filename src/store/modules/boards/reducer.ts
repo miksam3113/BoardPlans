@@ -8,12 +8,15 @@ const initialState = {
 
 export default function reducer(state = initialState, action: { type: string; payload?: any }) {
 	switch (action.type) {
-		case 'UPDATE_BOARDS':
+		case 'GET_BOARDS':
 			return {
 				...state,
 				boards: action.payload,
 			};
-
+		case 'POST_BOARDS':
+			return {
+				...state,
+			};
 		default: {
 			return { ...state, ...action.payload };
 		}

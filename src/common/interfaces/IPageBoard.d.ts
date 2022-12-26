@@ -1,8 +1,8 @@
-interface IPageBoard {
-	lists: list[];
+import IListItem from 'common/interfaces/IList';
+
+export interface IPageBoard {
+	lists: IListItem[];
 	title: string;
-	id: string;
+	id: number;
 	custom: string;
 }
-
-export default IPageBoard;

@@ -1,5 +1,5 @@
 .card {
-	min-width: 230px;
+	width: 97%;
 	min-height: 50px;
 	border-radius: 8px;
 	border: 3px solid #fff;
@@ -8,10 +8,12 @@
 	margin-right: auto;
 	text-align: center;
 	background-color: rgb(50, 50, 50);
+	cursor: pointer;
+	transition: 0.2s;
 }
 
 .title_card {
-	font-size: 24px;
+	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
 	color: #fff;
@@ -20,4 +22,13 @@
 	border: none;
 	outline: none;
 	margin-bottom: auto;
+}
+
+.drag {
+	box-shadow: 0 0 20px #000;
+}
+
+.card:hover {
+	box-shadow: 0 0 5px black;
+	transform: scale(1.03);
 }

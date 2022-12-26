@@ -19,7 +19,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { DeleteBoard } from 'store/modules/board/actions';
 import './popup.scss';
-import { doc } from 'prettier';
 
 export default function Popup(props: { title: string; active: boolean; id: number; handleModal?: () => void }) {
 	function validator(regExp: RegExp, title: string): boolean {
@@ -28,7 +27,7 @@ export default function Popup(props: { title: string; active: boolean; id: numbe
 
 	const regExp = /^((\w|[А-ЯЁа-яё])+[\s.-]?)+$|^$/;
 	const [title, setTitle] = useState({ title: '' });
-	const [eror, setEror] = useState({ eror: '' });
+	const [eror, setEror] = useState({ eror: 'p_del_b_des' });
 	const dispatch = useDispatch();
 
 	function Validate(e: any) {
@@ -40,7 +39,7 @@ export default function Popup(props: { title: string; active: boolean; id: numbe
 		});
 		setEror({
 			...eror,
-			eror: '',
+			eror: 'p_del_b_des',
 		});
 	}
 
@@ -55,7 +54,7 @@ export default function Popup(props: { title: string; active: boolean; id: numbe
 		} else {
 			setEror({
 				...eror,
-				eror: 'Ups, eror...',
+				eror: 'p_del_b_des rd_bg',
 			});
 		}
 	}
@@ -63,11 +62,10 @@ export default function Popup(props: { title: string; active: boolean; id: numbe
 		<div id="popup" className={props.active ? 'popup_del_b active' : 'popup_del_b'} onClick={props.handleModal}>
 			<div className="popup_del_b_body" onClick={(e) => e.stopPropagation()}>
 				<p className="p_del_b_title">Are you sure you want to delete the board?</p>
-				<p className="p_del_b_des">
+				<p className={eror.eror}>
 					Write <b>{props.title}</b> to delete the board.
 				</p>
-				<p className="p_del_eror">{eror.eror}</p>
-				<input id="input" onChange={Validate} className="p_del_b_inp" placeholder="Write..."></input>
+				<input id="input" onChange={Validate} autoComplete="off" className="p_del_b_inp" placeholder="Write..."></input>
 				<div className="btn_cont">
 					<button id="btn_create" onClick={props.handleModal} className="p_del_b_btn">
 						Cancel

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './popup.scss';
-import { CreateCard, getBoard } from 'store/modules/board/actions';
+import { CreateCard, EditList, getBoard } from 'store/modules/board/actions';
 
 export default function Popup(props: {
 	cre_position: number;
@@ -18,7 +18,7 @@ export default function Popup(props: {
 
 	const regExp = /^((\w|[А-ЯЁа-яё])+[\s.-]?)+$|^$/;
 	const [title, setTitle] = useState({ title: '' });
-	const [eror, setEror] = useState({ eror: '' });
+	const [error, setError] = useState({ error: '' });
 	const dispatch = useDispatch();
 
 	function Validate(e: any) {
@@ -29,9 +29,9 @@ export default function Popup(props: {
 			...title,
 			title: title_v,
 		});
-		setEror({
-			...eror,
-			eror: '',
+		setError({
+			...error,
+			error: '',
 		});
 	}
 
@@ -46,13 +46,18 @@ export default function Popup(props: {
 					title: '',
 				});
 			} else {
-				setEror({
-					...eror,
-					eror: 'Oops, write title...',
+				setError({
+					...error,
+					error: 'Oops, write title...',
 				});
 			}
 		}
 	}
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			props.setActive(false);
+		}
+	});
 	return (
 		// eslint-disable-next-line react/destructuring-assignment
 		<div
@@ -61,7 +66,7 @@ export default function Popup(props: {
 			onClick={() => props.setActive(false)}
 		>
 			<div className="popup_body_card" onClick={(e) => e.stopPropagation()}>
-				<p className="p_card_eror">{eror.eror}</p>
+				<p className="p_card_error">{error.error}</p>
 				<input
 					id="input"
 					onChange={Validate}
@@ -69,7 +74,9 @@ export default function Popup(props: {
 					maxLength={12}
 					className="p_inp card_inp"
 					placeholder="Write title..."
-				></input>
+					autoComplete="off"
+					value={title.title}
+				/>
 			</div>
 		</div>
 	);

@@ -26,12 +26,11 @@ function Input(props: { value: string; id: string }) {
 			...title,
 			title: title_v,
 		});
-		console.log(title_v);
+		dispatch(EditBoard(props.id, title.title.trim()));
 	}
 
 	function funPress(event: React.KeyboardEvent<HTMLInputElement>) {
 		if (event.key === 'Enter' && title.title) {
-			console.log(props.id);
 			dispatch(EditBoard(props.id, title.title.trim()));
 		}
 	}
@@ -44,6 +43,7 @@ function Input(props: { value: string; id: string }) {
 			type="text"
 			placeholder={props.value}
 			onKeyPress={funPress}
+			autoComplete="off"
 		/>
 	);
 }
